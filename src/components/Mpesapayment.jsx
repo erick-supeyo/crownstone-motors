@@ -26,6 +26,7 @@ const Mpesapayment=()=>{
                 }catch(error){
                     setError("Something went wrong")
                     setLoading("")
+            
 
                 }
                 }

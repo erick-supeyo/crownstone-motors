@@ -11,21 +11,23 @@ const Getproduct=()=>{
     const [error,setError]=useState("")
 
     // function to get product 
-    const Getproduct=async()=>{
+    const getproduct=async()=>{
         setLoading("please wait...")
         try{
             const response = await axios.get("http://erickhiggs.alwaysdata.net/api/getproducts")
             setProducts(response.data)
             setLoading("")
         }catch(error){
-
+            setError(error.message)
+            setLoading("")
+ 
             
         }
 
         }
         // call the function
         useEffect(()=>{
-            Getproduct()
+            getproduct()
         },[])
         console.log(products)
         const imagepath = "http://erickhiggs.alwaysdata.net/static/images/"
