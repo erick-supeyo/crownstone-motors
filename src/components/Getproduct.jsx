@@ -3,6 +3,7 @@ import axios from "axios"
 import React,{useState,useEffect} from "react"
 import { useNavigate } from "react-router-dom"
 import Carousel from "./Carousel";
+import Footer from "./Footer";
 const Getproduct=()=>{
     let navigate = useNavigate();
     // declare our states here
@@ -59,6 +60,7 @@ const Getproduct=()=>{
 
             </div>
             ))}
+            <Footer/>
            </div>
     )
 }

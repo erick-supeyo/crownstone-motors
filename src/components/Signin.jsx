@@ -58,7 +58,7 @@ const Signin=()=>{
             <form action="" onSubmit={handlesubmit}>
                 <input type="email" className="form-control" placeholder="Email" onChange={(e)=>setEmail(e.target.value)} /><br />
                 <input type="Password" className="form-control" placeholder="Password" onChange={(e)=>setPassword(e.target.value)}/><br />
-                <button type="submit" className="btn btn-primary col-md-12">Signin</button><br /><br />
+                <button type="submit" className="btn btn-dark col-md-12">Signin</button><br /><br />
                 <p>Don't have an account?<Link to= "/signup">Signup</Link> </p>
             </form>
 

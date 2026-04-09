@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -9,10 +9,11 @@ import Signin from './components/Signin';
 import Addproduct from './components/Addproduct';
 import Getproduct from './components/Getproduct';
 import Mpesapayment from './components/Mpesapayment';
-import Test from './components/Test';
+
 
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import Navbar from './components/Navbar';
+
 function App() {
   return (
     <BrowserRouter>
@@ -22,8 +23,9 @@ function App() {
         <Navbar/>
 
         <header className="App-header">
-          <marquee behavior="" direction="left"><h1>🤗welcome to Crownstone Motors🤗</h1></marquee>
-
+         <div className="marquee">
+  <h1>🤗 Welcome to Crownstone Motors 🤗</h1>
+</div>
         </header>
 
 

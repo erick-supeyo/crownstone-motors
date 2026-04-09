@@ -50,7 +50,7 @@ const Addproduct = () => {
                     <textarea type="text" className="form-control" placeholder="Enter product description" onChange={(e) => setProductDescription(e.target.value)} ></textarea><br />
                     <input type="number" className="form-control" placeholder="Enter product cost" onChange={(e) => setProductCost(e.target.value)} /><br />
                     <input type="file" accept="/image*" className="form-control" onChange={(e) => setProductPhoto(e.target.files[0])} /><br />
-                    <button type="submit" className="btn btn-primary col-md-12">Add Product</button><br /><br />
+                    <button type="submit" className="btn btn-dark col-md-12">Add Product</button><br /><br />
 
                 </form>
 

@@ -42,8 +42,8 @@ const Signup=()=>{
     
 
     return(
-        <div className="row mt-4 justify-content-center">
-            <div className="col-md-6 card shadow p-4">
+        <div className="row mt-4 justify-content-center ">
+            <div className="col-md-6 card shadow p-4 ">
                 <h1>Signup👣</h1>
                 {/* bind the states  */}
                 <h2 className="text-secondary"> {loading} </h2>
@@ -55,7 +55,7 @@ const Signup=()=>{
                     <input type="password" className="form-control" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)}/><br />
                     <input type="telephone" className="form-control" placeholder="Enter Phone" onChange={(e) => setPhone(e.target.value)}/><br />
 
-                    <button type="submit" className="btn btn-info col-md-12">Signup</button><br /><br />
+                    <button type="submit" className="btn btn-dark col-md-12">Signup</button><br /><br />
                     <p>Already have an account?<Link to= "/signin">Signin</Link></p>
                     
 
