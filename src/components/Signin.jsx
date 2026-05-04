@@ -1,16 +1,20 @@
 import axios from "axios"
 
 
-import React, { useState } from "react"
+import React, { useState} from "react"
 import { Link, useNavigate } from "react-router-dom"
 
 const Signin = () => {
     let navigate = useNavigate();
     // declare the two states here 
+    
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+   
+
     // 3 states for posting data 
+    
     const [loading, setLoading] = useState("")
     const [success, setSuccess] = useState("")
     const [error, setError] = useState("")

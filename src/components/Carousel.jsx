@@ -41,7 +41,7 @@ const Carousel = () => {
                     </a>
 
                 </div>
-            </div>
+            </div>              
             {/* <!-- end of section 2  -->  */}
         </section>
   )

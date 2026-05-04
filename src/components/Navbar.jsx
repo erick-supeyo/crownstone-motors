@@ -1,6 +1,19 @@
-import React from 'react'
+
+import React, { useState, useEffect } from "react"
 
 const Navbar = () => {
+        const[user,setUser]=useState("null")
+        
+    
+        useEffect(()=>{
+            const loggedUser=JSON.parse(localStorage.getItem("user"));
+            setUser(loggedUser);
+        },[]);
+        const logout = () =>{
+            localStorage.removeItem("user");
+            setUser(null);
+        };
+    
   return (
     <section class="row">
             <div class="col-md-12">
@@ -17,8 +30,24 @@ const Navbar = () => {
                         <div class="navbar-nav">
                             <a href="/" class="nav-link">Home🏠</a>
                             <a href="/addproduct" class="nav-link">Add product🚘</a>
+                            
+                            {user ?(
+                                <>
+                                <span className="nav-link">welcome{user.name}</span>
+                                <button onClick={logout} className="btn btn-danger">
+                                    Logout
+                                </button>
+                                </>
+                            ):(
+                                <>
+                                
+                                
+
                             <a href="/signin" class="nav-link">Signin🔐</a>
                             <a href="/signup" class="nav-link">Signup🥷🏼</a>
+                            </>
+                            )
+                            }
 
                         </div>
                     </div>

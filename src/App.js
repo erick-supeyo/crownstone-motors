@@ -48,6 +48,9 @@ function App() {
 
 
       </div>
+       <footer class="bg-black pd-4 text-center">
+        <b class="text-white">Developed by Eric Supeyo &copy; 2026. All rights Reserved.</b>
+    </footer>
     </BrowserRouter>
   );
 }

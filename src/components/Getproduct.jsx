@@ -1,3 +1,4 @@
+
 import axios from "axios"
 
 import React, { useState, useEffect } from "react"
@@ -10,6 +11,16 @@ const Getproduct = () => {
     const [loading, setLoading] = useState("")
     const [products, setProducts] = useState([])
     const [error, setError] = useState("")
+    // define the state 
+    const[search,setSearch]=useState("")
+    const[visiblecount,setVisibleCount]=useState(8)
+    // filter logics goes here 
+    const filtered_products = products.filter((item)=>
+         item.product_name.toLowerCase().includes(search.toLowerCase()) ||
+    item.product_description.toLowerCase().includes(search.toLowerCase())
+  );
+
+    
 
     // function to get product 
     const getproduct = async () => {
@@ -34,15 +45,34 @@ const Getproduct = () => {
     const imagepath = "https://erickhiggs.alwaysdata.net/static/images/"
     return (
         <div className="row">
-
             {/* carousel goes here */}
             <Carousel />
+
+            {/* search bar goes here  */}
+            <div className="row justify-content-center mt-3 mb-3">
+                <input 
+                className="form-control w-50"
+                type="search"
+                placeholder="search product..."
+                value={search}
+                onChange={(e)=>setSearch(e.target.value)} 
+                
+                />
+            </div>
+            
+            {/* {Bind Error message} */}
+            {loading && <p>{loading}</p> }
+            {error && <p className="text-danger">{error}</p>}
+
+
+            
             <h1 className="text-success text-center">💰Available products💰</h1>
             {/* bind the states  */}
             <h2 className="text-info"> {loading} </h2>
             <h2 className="text-danger">{error} </h2>
             {/* map here  */}
-            {products.map(singleproduct => (
+
+            {filtered_products.slice(0,visiblecount).map(singleproduct => (
 
                 <div className="col-md-3  mb-4">
                     <div className="card shadow h-100">
@@ -60,6 +90,16 @@ const Getproduct = () => {
 
                 </div>
             ))}
+            <div className="text-center ,mt-5"></div>
+            {visiblecount<filtered_products.length && (
+            <button
+            className="btn btn-primary"
+            onClick={()=> setVisibleCount(visiblecount+8)}
+            >
+                Load More
+            </button>
+
+            )}
             <Footer />
         </div>
     )
