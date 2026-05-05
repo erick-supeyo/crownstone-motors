@@ -12,6 +12,20 @@ const Signup = () => {
     const [success, setSuccess] = useState("")
     const [error, setError] = useState("")
 
+    // step 1
+    const[strength,setStrength]=useState("");
+
+    // step 2
+    const checkPasswordStrength = (password)=>{
+        if (password.length<4){
+            setStrength("Weak");
+        }else if (password.length<8){
+            setStrength("Medium");
+        }else{
+            setStrength("Strong");
+        }
+    };
+
     // function to handle submit 
     const handlesubmit = async (e) => {
         e.preventDefault()
@@ -44,6 +58,9 @@ const Signup = () => {
     return (
         <div className="row mt-4 justify-content-center ">
             <div className="col-md-6 card shadow p-4 ">
+
+
+
                 <h1>Signup👣</h1>
                 {/* bind the states  */}
                 <h2 className="text-secondary"> {loading} </h2>
@@ -52,7 +69,22 @@ const Signup = () => {
                 <form action="" onSubmit={handlesubmit}>
                     <input type="text" className="form-control" placeholder="Enter username" onChange={(e) => setUsername(e.target.value)} /><br />
                     <input type="email" className="form-control" placeholder="Enter Email" onChange={(e) => setEmail(e.target.value)} /><br />
-                    <input type="password" className="form-control" placeholder="Enter Password" onChange={(e) => setPassword(e.target.value)} /><br />
+                    <input type="password" className="form-control" placeholder="Enter Password" onChange={(e) =>{setPassword(e.target.value);checkPasswordStrength(e.target.value);}} /><br />
+
+                    {password &&(
+                        <p
+                        style ={{
+                            color:
+                            strength === "Weak"
+                            ? "red"
+                            : strength === "Medium"
+                            ? "orange"
+                            : "green",
+                        }}
+                        >
+                        password Strength: {strength}
+                        </p>
+                    )}
                     <input type="telephone" className="form-control" placeholder="Enter Phone" onChange={(e) => setPhone(e.target.value)} /><br />
 
                     <button type="submit" className="btn btn-dark col-md-12">Signup</button><br /><br />
