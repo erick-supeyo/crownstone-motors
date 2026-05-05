@@ -10,23 +10,23 @@ const Carousel = () => {
                     <div class="carousel-inner">
                         {/* <!-- div with image 1  -->  */}
                         <div class="carousel-item active">
-                            <img src="images/sliding1.jpeg" alt="slide1" style={{height:"400px",width:"1300px",objectFit:"cover"}} />
+                            <img src="images/slide9.jpg" alt="slide1" style={{height:"350px",width:"100%",objectFit:"cover"}} />
                         </div>
                         {/* <!-- div with image 2  -->  */}
                         <div class="carousel-item">
-                            <img src="images/sliding2.jpeg" alt="slide2"  style={{height:"400px",width:"1300px",objectFit:"cover"}} />
+                            <img src="images/slide10.jpg" alt="slide2"  style={{height:"350px",width:"100%",objectFit:"cover"}} />
                         </div>
 
                         {/* <!-- div with image 3  -->  */}
                         <div class="carousel-item">
 
-                            <img src="images/sliding3.jpeg" alt="slide3" style={{height:"400px",width:"1300px",objectFit:"cover"}} />
+                            <img src="images/slide13.avif" alt="slide3" style={{height:"350px",width:"100%",objectFit:"cover"}} />
                         </div>
                         
                         {/* <!-- div with image 4  -->  */}
                         <div class="carousel-item">
                             
-                            <img src="images/sliding4.jpeg" alt="slide4" style={{height:"400px",width:"1300px",objectFit:"cover"}} />
+                            <img src="images/sliding1.jpeg" alt="slide4" style={{height:"350px",width:"100%",objectFit:"container"}} />
                         </div>
                     </div>
                         
